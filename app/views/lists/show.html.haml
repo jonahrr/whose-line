@@ -1,0 +1,5 @@
+%h1= @list.title
+
+%ul
+  - @list.list_entries.each do |e|
+    %li= e.speaker.name

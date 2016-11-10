@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+  get 'lists/index'
+
+  get 'lists/show'
+
+  get 'lists/new'
+
+  get 'list/index'
+
+  get 'list/show'
+
+  get 'list/new'
+
+  get 'discussions/:discussion_id' => 'discussions#view'
+
+  post 'discussions/:discussion_id/push' => 'discussions#push'
+
+  post 'discussions/:discussion_id/pop' => 'discussions#pop'
+
+  devise_for :users
+  root to: 'speakers#new'
+  get 'speakers/new'
+
+  get 'speakers/create'
+
+  get 'speakers_controller/new'
+
+  get 'speakers_controller/create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
