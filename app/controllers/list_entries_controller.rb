@@ -56,7 +56,7 @@ class ListEntriesController < ApplicationController
   def destroy
     @list_entry.destroy
     respond_to do |format|
-      format.html { redirect_to list_entries_url, notice: 'List entry was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'List entry was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

@@ -11,7 +11,9 @@
   %b Speakers:
   %ul
     - @list.list_entries.each do |l|
-      %li= l.speaker.name
+      %li
+        = l.speaker.name
+        = button_to 'Remove', { action: 'destroy', controller: 'list_entries', id: l.id }, method: :delete
 
 %p
   Add someone to the list:
