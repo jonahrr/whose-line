@@ -1,5 +1,12 @@
-%h1= @list.title
+%p#notice= notice
 
-%ul
-  - @list.list_entries.each do |e|
-    %li= e.speaker.name
+%p
+  %b Title:
+  = @list.title
+%p
+  %b Date:
+  = @list.date
+
+= link_to 'Edit', edit_list_path(@list)
+\|
+= link_to 'Back', lists_path

@@ -1,0 +1,23 @@
+%h1 Listing list_entries
+
+%table
+  %thead
+    %tr
+      %th Speaker
+      %th List
+      %th
+      %th
+      %th
+
+  %tbody
+    - @list_entries.each do |list_entry|
+      %tr
+        %td= list_entry.speaker_id
+        %td= list_entry.list_id
+        %td= link_to 'Show', list_entry
+        %td= link_to 'Edit', edit_list_entry_path(list_entry)
+        %td= link_to 'Destroy', list_entry, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New List entry', new_list_entry_path

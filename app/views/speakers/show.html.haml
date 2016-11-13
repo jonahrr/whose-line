@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @speaker.name
+
+= link_to 'Edit', edit_speaker_path(@speaker)
+\|
+= link_to 'Back', speakers_path

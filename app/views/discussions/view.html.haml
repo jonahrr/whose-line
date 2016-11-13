@@ -1,4 +1,0 @@
-- @discussion.speakers.each do |speaker|
-  %li
-    = speaker
-= button_to 'Push', action: :push, params: { discussion_id: @discussion.id, user_id: current_user.try(:id) || 1 }

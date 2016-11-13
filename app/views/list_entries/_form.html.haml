@@ -1,0 +1,16 @@
+= form_for @list_entry do |f|
+  - if @list_entry.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@list_entry.errors.count, "error")} prohibited this list_entry from being saved:"
+      %ul
+        - @list_entry.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :speaker_id
+    = f.number_field :speaker_id
+  .field
+    = f.label :list_id
+    = f.number_field :list_id
+  .actions
+    = f.submit 'Save'

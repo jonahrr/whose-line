@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Speaker:
+  = @list_entry.speaker_id
+%p
+  %b List:
+  = @list_entry.list_id
+
+= link_to 'Edit', edit_list_entry_path(@list_entry)
+\|
+= link_to 'Back', list_entries_path
