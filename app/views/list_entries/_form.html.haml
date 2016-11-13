@@ -6,9 +6,15 @@
         - @list_entry.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
-    = f.label :speaker_id
-    = f.number_field :speaker_id
+  - if @speakers
+    .field
+      = f.label :speaker_id, 'Speakers'
+      = f.collection_select :speaker_id, @speakers || Speaker.all, :id, :name
+  - else
+    .field
+      = f.label :speaker_id
+      = f.number_field :speaker_id
+
   .field
     = f.label :list_id
     = f.number_field :list_id

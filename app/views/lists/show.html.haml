@@ -7,6 +7,16 @@
   %b Date:
   = @list.date
 
+%p
+  %b Speakers:
+  %ul
+    - @list.list_entries.each do |l|
+      %li= l.speaker.name
+
+%p
+  Add someone to the list:
+  = render 'list_entries/form'
+
 = link_to 'Edit', edit_list_path(@list)
 \|
 = link_to 'Back', lists_path

@@ -28,10 +28,10 @@ class ListEntriesController < ApplicationController
 
     respond_to do |format|
       if @list_entry.save
-        format.html { redirect_to @list_entry, notice: 'List entry was successfully created.' }
+        format.html { redirect_to :back, notice: 'List entry was successfully created.' }
         format.json { render :show, status: :created, location: @list_entry }
       else
-        format.html { render :new }
+        format.html { redirect_to :back }
         format.json { render json: @list_entry.errors, status: :unprocessable_entity }
       end
     end

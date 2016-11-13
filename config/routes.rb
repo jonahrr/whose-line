@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'lists#index'
   resources :list_entries
   resources :speakers
   resources :lists
