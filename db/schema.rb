@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161113001935) do
+ActiveRecord::Schema.define(version: 20161115225424) do
 
   create_table "list_entries", force: :cascade do |t|
     t.integer  "speaker_id"
     t.integer  "list_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.datetime "finished_at"
   end
 
   create_table "lists", force: :cascade do |t|

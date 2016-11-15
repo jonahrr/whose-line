@@ -42,10 +42,10 @@ class ListEntriesController < ApplicationController
   def update
     respond_to do |format|
       if @list_entry.update(list_entry_params)
-        format.html { redirect_to @list_entry, notice: 'List entry was successfully updated.' }
+        format.html { redirect_to :back, notice: 'List entry was successfully updated.' }
         format.json { render :show, status: :ok, location: @list_entry }
       else
-        format.html { render :edit }
+        format.html { redirect_to :back }
         format.json { render json: @list_entry.errors, status: :unprocessable_entity }
       end
     end
@@ -69,6 +69,6 @@ class ListEntriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_entry_params
-      params.require(:list_entry).permit(:speaker_id, :list_id)
+      params.require(:list_entry).permit(:id, :speaker_id, :list_id, :finished_at)
     end
 end
