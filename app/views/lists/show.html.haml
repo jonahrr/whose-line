@@ -12,8 +12,11 @@
   %ul
     - @list.list_entries.each do |l|
       %li
+        = l.id
         = l.speaker.name
-        = button_to 'Remove', { action: 'destroy', controller: 'list_entries', id: l.id }, method: :delete
+        = '(Finished)' if l.finished_at
+        = button_to 'Finish', { id: l.id, action: 'update',  controller: 'list_entries', list_entry: {  finished_at: Time.current } }, method: :patch
+        = button_to 'Delete', { action: 'destroy', controller: 'list_entries', id: l.id }, method: :delete
 
 %p
   Add someone to the list:
